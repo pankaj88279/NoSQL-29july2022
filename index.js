@@ -12,17 +12,20 @@ require ('dotenv').config();
 //function defination
 async function Player(){
 
-    return await mongoose .connect('mongodb+srv://pankaj:<panakj1993>@cluster0.4gb2s.mongodb.net/?retryWrites=true&w=majority')
+    return await mongoose .connect('mongodb+srv://pankaj:pankaj1993@cluster0.4gb2s.mongodb.net/?retryWrites=true&w=majority')
 
     
 }
 // 2. function calling
-Player((d)=>{
-   console.log('cannact')
+ Player().then(()=>{ 
+console.log('conected mogodb')
 
-}).then().then().catch(()=>{
-    console.log('not cannected')
-})
+ }).catch((err)=>{ 
+    console.log('error',err)
+ })
+  
+ 
+
 
 const PORT=process.env.PORT
 
